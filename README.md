@@ -19,7 +19,7 @@ graph TD
     subgraph "Query Service"
         WDQS["WDQS (Blazegraph)<br/>Java 8 / SPARQL store"]
         WDQSUpdater["WDQS Updater<br/>(same image, streams changes)"]
-        WDQSFrontend["WDQS Frontend<br/>Nginx / static JS app"]
+        WDQSFrontend["WDQS Frontend<br/>Node.js / static JS app"]
     end
 
     subgraph "Supporting"
@@ -168,7 +168,7 @@ This is a long-running daemon that keeps Blazegraph in sync with Wikibase change
 Purely a **static web app** served by Nginx. The SPARQL queries run client-side (browser → WDQS directly).
 
 > [!NOTE]
-> **Upsun mapping**: Could be a simple **static site** or Nginx container. Very straightforward.
+> **Upsun mapping**: Could be a simple **static site** or Node.js container. Very straightforward.
 
 ---
 
@@ -233,7 +233,7 @@ A PHP app for batch-editing Wikibase items. Communicates with Wikibase via its A
 | **Elasticsearch** | Managed service (but plugins?) | 🟡 Plugin compatibility risk |
 | **WDQS (Blazegraph)** | Java app (Upsun Java runtime) | 🟢 Feasible (verify Java 8 support) |
 | **WDQS Updater** | Worker on Java app | 🟢 Feasible |
-| **WDQS Frontend** | Static site or Nginx app | 🟢 Straightforward |
+| **WDQS Frontend** | Static site or Node.js container | 🟢 Straightforward |
 | **QuickStatements** | Second PHP app | 🟢 Straightforward |
 | **Traefik** | Not needed (Upsun router) | 🟢 Replaced by platform |
 
