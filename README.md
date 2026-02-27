@@ -110,10 +110,7 @@ Standard MariaDB. Stores all MediaWiki/Wikibase data, user accounts, page conten
 Used by the CirrusSearch extension for full-text search instead of MediaWiki's default DB-based search.
 
 > [!WARNING]
-> **Upsun challenge**: Upsun provides Elasticsearch/OpenSearch as a managed service but the **Wikimedia-specific plugins** (`extra`, `experimental-highlighter`) won't be available on managed ES. Options:
-> 1. Run ES as a custom Docker container (if Upsun supports it)
-> 2. Drop CirrusSearch and use default MediaWiki search
-> 3. Check if OpenSearch with compatible plugins is feasible
+> **Upsun challenge**: Upsun provides Elasticsearch/OpenSearch as a managed service but the **Wikimedia-specific plugins** (`extra`, `experimental-highlighter`) won't be available on managed ES.
 
 ---
 
